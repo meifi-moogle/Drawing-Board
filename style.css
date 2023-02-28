@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: pink;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board {
+    height: 70vh;
+    width: 30rem;
+    display: grid;
+    /* grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr); */
+    border: 1px solid red;
+}
+
+.divs {
+    height: 5rem;
+    width: 5rem;
+}
