@@ -10,12 +10,20 @@ function populateBoard(size) {
     let squaresTotal = size * size;
     for (let i = 0; i < squaresTotal; i++) {
         let square = document.createElement('div');
-        square.style.backgroundColor = 'pink';
+        square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = 'black';
+        });
+
+        square.addEventListener('click', () => {
+            square.style.backgroundColor = 'white';
+        });
+
+        // square.style.backgroundColor = 'white';
         board.insertAdjacentElement('beforeend', square);
     }
 }
 
-populateBoard(16);
+populateBoard(50);
 
 function changeSize(input) {
     if (input > 1 && input <= 100) {
@@ -26,3 +34,13 @@ function changeSize(input) {
     }
 }
 
+function reset() {
+    let board = document.querySelector('.board');
+    let squares = board.querySelectorAll('div');
+    squares.forEach((div) => div.style.backgroundColor = 'white');
+}
+
+const resetBtn = document.querySelector('.reset-btn')
+resetBtn.addEventListener('click', () => {
+    reset();
+})
